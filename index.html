@@ -46,6 +46,14 @@
 				display: inline-block;
 			}
 			
+			p.large_paragraph {
+				width: 800px;
+				display: inline-block;
+				text-align: justify;
+				font-size: 16px;
+				margin-top: 0;
+			}
+			
 			#content {
 				width: 100%;
 				max-width: 1024px;
@@ -115,27 +123,27 @@
 		<div id="content">
 			<h1>EU LCS PLAYOFF PICTURE</h1>
 			<p style="font-style: italic;">by Derek 'Kathix' Adams and Benson 'Sarcasmappreciated' Li</p>
-			<h3>
-				
-			</h3>
+			<p class="large_paragraph">The regular season of the 2015 EU LCS spring split concludes next week with every team playing two games. With 10 games left in the season, there are a total of 1024 (2^10) different potential outcomes in the final standings. We generated all 1024 outcomes and analyzed how each result would affect the final standings.</p>
+			<p class="large_paragraph">The first table below shows the probability of every team finishing in places 1 thru 10 (including ties). Hovering over a team name will display a second table that has the breakdown of the raw tie scenarios for the potential finishes. The results assume that each team has a 50% chance to win each game, and the values in the tables below represent percentages. The results do not factor in the head-to-head tiebreakers; the results simply compare the raw ties in each team’s total number of wins.</p>
+			
+			<h2>PLACEMENT PROBABILITY (INCLUDING TIES)</h2>
 			<table id="winrate_table">
 				<tr class="placement">
 					<th>TEAM</th>
-					<th>1</th>
-					<th>2</th>
-					<th>3</th>
-					<th>4</th>
-					<th>5</th>
-					<th>6</th>
-					<th>7</th>
-					<th>8</th>
-					<th>9</th>
-					<th>10</th>
+					<th>1st</th>
+					<th>2nd</th>
+					<th>3rd</th>
+					<th>4th</th>
+					<th>5th</th>
+					<th>6th</th>
+					<th>7th</th>
+					<th>8th</th>
+					<th>9th</th>
+					<th>10th</th>
 				</tr>		
 			</table>
 
 			<h2 id="team_name">TIE POTENTIAL - Mouseover the above table!</h2>
-
 			<table id="ties_table">
 				<tr class="ties">
 					<th>PLACE</th>
@@ -145,6 +153,8 @@
 					<th>4-Way Tie</th>
 				</tr>		
 			</table>
+			
+			<p class="large_paragraph">Example: The first table shows that SK Gaming has a 100% chance to finish in 1st place. In looking at the tie breakdown in the second table, SK has an 87.50% chance to finish solo-first and a 12.50% chance to finish in a 2-way tie.</p>
 			<div id="footer">
 				<h2 style="margin-top: 5px">Follow Us!</h2>
 				<h3 class="authors">Statician: Derek Adams</h3>
@@ -256,7 +266,7 @@
 							break;
 						case 7: // ROC
 							teamName = "TEAM ROCCAT"
-							teamRecord = [{place:"6th",solo:9.38,two:15.63,three:9.38,four:""},{place:"7th",solo:9.38,two:23.44,three:3.13,four:""},{place:"8th",solo:17.19,two:9.38,three:1.56,four:""}];
+							teamRecord = [{place:"6th",solo:9.38,two:15.63,three:9.38,four:""},{place:"7th",solo:9.38,two:23.44,three:3.13,four:1.56},{place:"8th",solo:17.19,two:9.38,three:1.56,four:""}];
 							break;
 						case 8: // EL
 							teamName = "ELEMENTS"
