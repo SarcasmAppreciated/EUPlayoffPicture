@@ -118,12 +118,12 @@
 		<script>
 			$(document).ready(function(){
 				// Data Source
-				var teamRow = [{team:"SK",first:100.00,second:"",third:"",fourth:"",fifth:"",sixth:"",seventh:"",eighth:"",ninth:"",tenth:""},{team:"FNC",first:31.25,second:56.25,third:12.50,fourth:"",fifth:"",sixth:"",seventh:"",eighth:"",ninth:"",tenth:""},
-				{team:"H2K",first:6.25,second:31.25,third:62.50,fourth:"",fifth:"",sixth:"",seventh:"",eighth:"",ninth:"",tenth:""},{team:"UOL",first:"",second:"",third:12.50,fourth:50.00,fifth:31.25,sixth:6.25,seventh:"",eighth:"",ninth:"",tenth:""},
-				{team:"GMB",first:"",second:"",third:6.25,fourth:56.25,fifth:31.25,sixth:6.25,seventh:"",eighth:"",ninth:"",tenth:""},{team:"CW",first:"",second:"",third:"",fourth:12.50,fifth:37.50,sixth:43.75,seventh:6.25,eighth:"",ninth:"",tenth:""},
-				{team:"EL",first:"",second:"",third:"",fourth:"",fifth:9.38,sixth:25.00,seventh:59.38,eighth:6.25,ninth:"",tenth:""},{team:"ROC",first:"",second:"",third:"",fourth:"",fifth:"",sixth:9.38,seventh:25.00,eighth:50.00,ninth:12.50,tenth:3.13},
-				{team:"GIA",first:"",second:"",third:"",fourth:"",fifth:"",sixth:"",seventh:9.38,eighth:18.75,ninth:46.88,tenth:25.00},{team:"MYM",first:"",second:"",third:"",fourth:"",fifth:"",sixth:"",seventh:6.25,eighth:28.13,ninth:37.50,tenth:28.13}];
-								
+				var teamRow = [{team:"SK",first:100.00,second:"",third:"",fourth:"",fifth:"",sixth:"",seventh:"",eighth:"",ninth:"",tenth:""},{team:"FNC",first:6.25,second:56.25,third:37.50,fourth:"",fifth:"",sixth:"",seventh:"",eighth:"",ninth:"",tenth:""},
+				{team:"H2K",first:6.25,second:56.25,third:37.50,fourth:"",fifth:"",sixth:"",seventh:"",eighth:"",ninth:"",tenth:""},{team:"UOL",first:"",second:"",third:18.75,fourth:43.75,fifth:37.50,sixth:"",seventh:"",eighth:"",ninth:"",tenth:""},
+				{team:"GMB",first:"",second:"",third:12.50,fourth:50.00,fifth:37.50,sixth:"",seventh:"",eighth:"",ninth:"",tenth:""},{team:"CW",first:"",second:"",third:"",fourth:"",fifth:12.50,sixth:71.88,seventh:12.50,eighth:3.13,ninth:"",tenth:""},
+				{team:"ROC",first:"",second:"",third:"",fourth:"",fifth:"",sixth:34.38,seventh:37.50,eighth:28.13,ninth:"",tenth:""},{team:"EL",first:"",second:"",third:"",fourth:"",fifth:"",sixth:25.00,seventh:50.00,eighth:25.00,ninth:"",tenth:""},
+				{team:"GIA",first:"",second:"",third:"",fourth:"",fifth:"",sixth:"",seventh:3.13,eighth:12.50,ninth:53.13,tenth:31.25},{team:"MYM",first:"",second:"",third:"",fourth:"",fifth:"",sixth:"",seventh:3.13,eighth:12.50,ninth:53.13,tenth:31.25}];
+				
 				var numOfTeams = 10;
 				var i;
 				for(i = 0; i < numOfTeams; i++) {
@@ -194,11 +194,43 @@
 					switch(teamNum) {
 						case 1: // SK
 							teamName = "SK GAMING";
-							teamRecord = [{place:"1st",solo:65.63,two:25.00,three:3.13,four:""},{place:"2nd",solo:6.25,two:"",three:"",four:""}];
+							teamRecord = [{place:"1st",solo:87.50,two:12.50,three:"",four:""}];
 							break;
 						case 2: // FNC
 							teamName = "FNATIC"
-							teamRecord = [{place:"1st",solo:6.25,two:21.88,three:3.13,four:""},{place:"2nd",solo:34.38,two:21.88,three:"",four:""},{place:"3rd",solo:12.50,two:"" 	,three:"",four:""}];
+							teamRecord = [{place:"1st",solo:"",two:6.25,three:"",four:""},{place:"2nd",solo:25.00,two:12.50,three:"",four:""},{place:"3rd",solo:25.00,two:12.50,three:"",four:""}];
+							break;
+						case 3: // H2K
+							teamName = "H2K GAMING"
+							teamRecord = [{place:"1st",solo:"",two:6.25,three:"",four:""},{place:"2nd",solo:31.25,two:25.00,three:"",four:""},{place:"3rd",solo:18.75,two:18.75,three:"",four:""}];
+							break;
+						case 4: // UOL
+							teamName = "UNICORNS OF LOVE"
+							teamRecord = [{place:"3rd",solo:"",two:18.75,three:"",four:""},{place:"4th",solo:18.75,two:25.00,three:"",four:""},{place:"5th",solo:31.625,two:6.25,three:"",four:""}];
+							break;							
+						case 5: // GMB
+							teamName = "GAMBIT GAMING"
+							teamRecord = [{place:"3rd",solo:"",two:12.50,three:"",four:""},{place:"4th",solo:25.00,two:25.00,three:"",four:""},{place:"5th",solo:31.25,two:6.25,three:"",four:""}];
+							break;
+						case 6: // CW
+							teamName = "COPHENHAGEN WOLVES"
+							teamRecord = [{place:"5th",solo:"",two:12.50,three:"",four:""},{place:"6th",solo:40.63,two:21.88,three:9.38,four:""},{place:"7th",solo:3.13,two:9.38,three:"",four:""},{place:"8th",solo:3.13,two:"",three:"",four:""}];
+							break;
+						case 7: // ROC
+							teamName = "TEAM ROCCAT"
+							teamRecord = [{place:"6th",solo:9.38,two:15.63,three:9.38,four:""},{place:"7th",solo:9.38,two:23.44,three:3.13,four:""},{place:"8th",solo:17.19,two:9.38,three:1.56,four:""}];
+							break;
+						case 8: // EL
+							teamName = "ELEMENTS"
+							teamRecord = [{place:"6th",solo:3.13,two:12.50,three:9.38,four:""},{place:"7th",solo:18.75,two:26.56,three:3.13,four:1.56},{place:"8th",solo:14.06,two:9.38,three:1.56,four:""}];
+							break;
+						case 9: // GIA
+							teamName = "GIANTS"
+							teamRecord = [{place:"7th",solo:"",two:"",three:1.56,four:1.56},{place:"8th",solo:"",two:9.38,three:3.13,four:""},{place:"9th",solo:20.31,two:32.81,three:"",four:""},{place:"10th",solo:31.25,two:"",three:"",four:""}];
+							break;
+						case 10: // MYM
+							teamName = "MEET YOUR MAKERS"
+							teamRecord = [{place:"7th",solo:"",two:"",three:1.56,four:1.56},{place:"8th",solo:"",two:9.38,three:3.13,four:""},{place:"9th",solo:20.31,two:32.81,three:"",four:""},{place:"10th",solo:31.25,two:"",three:"",four:""}];
 							break;
 						default:
 					}
@@ -207,7 +239,7 @@
 					
 					var j;
 					for(j = 0; j < teamRecord.length; j++) {
-						$("#ties_table").append("<tr class='tie_history'><td>" + teamRecord[j].place +"</td><td>" + teamRecord[j].solo +"</td><td>" + teamRecord[j].two +"</td><td>" + teamRecord[j].three +"</td><td>" + teamRecord[j].four +"</td></tr>");
+						$("#ties_table").append("<tr class='tie_history'><td>" + teamRecord[j].place +"</td><td>" + teamRecord[j].solo  +"</td><td>" + teamRecord[j].two +"</td><td>" + teamRecord[j].three +"</td><td>" + teamRecord[j].four +"</td></tr>");
 					}
 					colourizeTable();
 				}
