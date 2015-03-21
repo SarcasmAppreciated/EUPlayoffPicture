@@ -16,7 +16,7 @@
 				margin: 0;
 			}
 			body {
-				background-color: #999;
+				background-color: #BBB;
 				margin: 0;
 				padding: 0;
 				width: 100%;
@@ -25,11 +25,11 @@
 				font-family: 'Lato', Arial, Sans-serif;
 				font-weight: 300;
 			}
-			
+								
 			h1 {
 				height: auto;
 				width: 100%;
-				display: inlin-block;
+				display: inline-block;
 				padding-top: 10px;
 				padding-bottom: 10px;
 				color: #FFF;
@@ -42,12 +42,40 @@
 				font-family: 'Oswald', 'Lato', Arial, Sans-serif;
 			}
 			
+			h3.authors {
+				display: inline-block;
+			}
+			
 			#content {
-				background-color: #FFF;
 				width: 100%;
 				max-width: 1024px;
 				height: auto;
+				background-color: #FFF;
 				display: inline-block;
+			}
+			
+			#footer {
+				height: auto;
+				width: 100%;
+				max-width: 1024px;
+				background-color: #333;				
+				display: inline-block;
+				color: #FFF;
+				cursor: default;
+				box-shadow: 0 5px 3px #888888;
+			}
+			
+			.twitter {				
+				height: 25px;
+				width: 25px;
+				background: url("http://orig04.deviantart.net/dbf5/f/2015/079/0/4/twitter_circle_by_bli08-d8mhtzw.png") center no-repeat;
+				background-size: 30px 30px;
+				border-radius: 50%;
+				display: inline-block;
+				position: relative;
+				top: 5px;
+				left: 5px;
+				margin-right: 25px;
 			}
 						
 			table {
@@ -86,7 +114,10 @@
 	<body>
 		<div id="content">
 			<h1>EU LCS PLAYOFF PICTURE</h1>
-			<h3>[Insert Blurb]</h3>
+			<p style="font-style: italic;">by Derek 'Kathix' Adams and Benson 'Sarcasmappreicated' Li</p>
+			<h3>
+				
+			</h3>
 			<table id="winrate_table">
 				<tr class="placement">
 					<th>TEAM</th>
@@ -103,7 +134,7 @@
 				</tr>		
 			</table>
 
-			<h2 id="team_name">TIE POTENTIAL</h2>
+			<h2 id="team_name">TIE POTENTIAL - Mouseover the above table!</h2>
 
 			<table id="ties_table">
 				<tr class="ties">
@@ -113,7 +144,14 @@
 					<th>3-Way Tie</th>
 					<th>4-Way Tie</th>
 				</tr>		
-			</table>			
+			</table>
+			<div id="footer">
+				<h2 style="margin-top: 5px">Follow Us!</h2>
+				<h3 class="authors">Statician: Derek Adams</h3>
+				<a href="https://twitter.com/Kathix_Stats"><div class="twitter"></div></a>
+				<h3 class="authors">Designer: Benson Li</h3>
+				<a href="https://twitter.com/SrcsmApprciated"><div class="twitter"></div></a>
+			</div>
 		</div>
 		<script>
 			$(document).ready(function(){
@@ -198,7 +236,7 @@
 							break;
 						case 2: // FNC
 							teamName = "FNATIC"
-							teamRecord = [{place:"1st",solo:"",two:6.25,three:"",four:""},{place:"2nd",solo:25.00,two:12.50,three:"",four:""},{place:"3rd",solo:25.00,two:12.50,three:"",four:""}];
+							teamRecord = [{place:"1st",solo:"",two:6.25,three:"",four:""},{place:"2nd",solo:31.25,two:25.00,three:"",four:""},{place:"3rd",solo:25.00,two:12.50,three:"",four:""}];
 							break;
 						case 3: // H2K
 							teamName = "H2K GAMING"
@@ -206,7 +244,7 @@
 							break;
 						case 4: // UOL
 							teamName = "UNICORNS OF LOVE"
-							teamRecord = [{place:"3rd",solo:"",two:18.75,three:"",four:""},{place:"4th",solo:18.75,two:25.00,three:"",four:""},{place:"5th",solo:31.625,two:6.25,three:"",four:""}];
+							teamRecord = [{place:"3rd",solo:"",two:18.75,three:"",four:""},{place:"4th",solo:18.75,two:25.00,three:"",four:""},{place:"5th",solo:31.25,two:6.25,three:"",four:""}];
 							break;							
 						case 5: // GMB
 							teamName = "GAMBIT GAMING"
@@ -225,7 +263,7 @@
 							teamRecord = [{place:"6th",solo:3.13,two:12.50,three:9.38,four:""},{place:"7th",solo:18.75,two:26.56,three:3.13,four:1.56},{place:"8th",solo:14.06,two:9.38,three:1.56,four:""}];
 							break;
 						case 9: // GIA
-							teamName = "GIANTS"
+							teamName = "GIANTS! GAMING"
 							teamRecord = [{place:"7th",solo:"",two:"",three:1.56,four:1.56},{place:"8th",solo:"",two:9.38,three:3.13,four:""},{place:"9th",solo:20.31,two:32.81,three:"",four:""},{place:"10th",solo:31.25,two:"",three:"",four:""}];
 							break;
 						case 10: // MYM
