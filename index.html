@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>EU LCS - Playoff Picture</title>
+
+		<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1,user-scalable=no">
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+		<style type="text/css">
+			body, table, h1, h2, a {
+				margin: 0;
+			}
+			body {
+				background-color: #999;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: auto;
+				text-align: center;
+				font-family: 'Lato', Arial, Sans-serif;
+				font-weight: 300;
+			}
+			
+			h1 {
+				height: auto;
+				width: 100%;
+				display: inlin-block;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				color: #FFF;
+				background-color: #002060;
+				font-family: 'Oswald', 'Lato', Arial, Sans-serif;
+				letter-spacing: 2px;
+			}
+			
+			h2 {
+				font-family: 'Oswald', 'Lato', Arial, Sans-serif;
+			}
+			
+			#content {
+				background-color: #FFF;
+				width: 100%;
+				max-width: 1024px;
+				height: auto;
+				display: inline-block;
+			}
+						
+			table {
+				margin-top: 10px;
+				margin-bottom: 20px;
+				display: inline-block;
+			}
+			
+			tr {
+				height: 20px;
+				width: auto;
+				display: table-row;
+			}
+			
+			th {
+				width: 75px;
+				border-bottom: 1px solid #EEE;
+				font-family: 'Oswald', 'Lato', Arial, Sans-serif;
+			}
+			
+			td {
+				border: 1px solid #EEE;
+				cursor: default;
+			}
+			
+			.hover {
+				border: 1px solid #002060;
+			}
+			
+			.hover_light {
+				border: 1px solid #bfc7d7;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<h1>EU LCS PLAYOFF PICTURE</h1>
+			<h3>[Insert Blurb]</h3>
+			<table id="winrate_table">
+				<tr class="placement">
+					<th>TEAM</th>
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+					<th>4</th>
+					<th>5</th>
+					<th>6</th>
+					<th>7</th>
+					<th>8</th>
+					<th>9</th>
+					<th>10</th>
+				</tr>		
+			</table>
+
+			<h2 id="team_name">TIE POTENTIAL</h2>
+
+			<table id="ties_table">
+				<tr class="ties">
+					<th>PLACE</th>
+					<th>Solo</th>
+					<th>2-Way Tie</th>
+					<th>3-Way Tie</th>
+					<th>4-Way Tie</th>
+				</tr>		
+			</table>			
+		</div>
+		<script>
+			$(document).ready(function(){
+				// Data Source
+				var teamRow = [{team:"SK",first:100.00,second:"",third:"",fourth:"",fifth:"",sixth:"",seventh:"",eighth:"",ninth:"",tenth:""},{team:"FNC",first:31.25,second:56.25,third:12.50,fourth:"",fifth:"",sixth:"",seventh:"",eighth:"",ninth:"",tenth:""},
+				{team:"H2K",first:6.25,second:31.25,third:62.50,fourth:"",fifth:"",sixth:"",seventh:"",eighth:"",ninth:"",tenth:""},{team:"UOL",first:"",second:"",third:12.50,fourth:50.00,fifth:31.25,sixth:6.25,seventh:"",eighth:"",ninth:"",tenth:""},
+				{team:"GMB",first:"",second:"",third:6.25,fourth:56.25,fifth:31.25,sixth:6.25,seventh:"",eighth:"",ninth:"",tenth:""},{team:"CW",first:"",second:"",third:"",fourth:12.50,fifth:37.50,sixth:43.75,seventh:6.25,eighth:"",ninth:"",tenth:""},
+				{team:"EL",first:"",second:"",third:"",fourth:"",fifth:9.38,sixth:25.00,seventh:59.38,eighth:6.25,ninth:"",tenth:""},{team:"ROC",first:"",second:"",third:"",fourth:"",fifth:"",sixth:9.38,seventh:25.00,eighth:50.00,ninth:12.50,tenth:3.13},
+				{team:"GIA",first:"",second:"",third:"",fourth:"",fifth:"",sixth:"",seventh:9.38,eighth:18.75,ninth:46.88,tenth:25.00},{team:"MYM",first:"",second:"",third:"",fourth:"",fifth:"",sixth:"",seventh:6.25,eighth:28.13,ninth:37.50,tenth:28.13}];
+				
+				var SK = [{place:"1st",solo:65.63,two:25.00,three:3.13,four:""},{place:"2nd",solo:6.25,two:"",three:"",four:""}];
+								
+				var numOfTeams = 10;
+				var i;
+				for(i = 0; i < numOfTeams; i++) {
+					appendTable(i);
+				}
+				
+				colourizeTable();
+				
+				// Given data, create table rows/columns + titles
+				function appendTable(i){
+					$("#winrate_table").append("<tr><td>" + teamRow[i].team + "</td><td>" + teamRow[i].first + " </td><td>" + teamRow[i].second + "</td><td>" + teamRow[i].third + "</td><td>"
+					+ teamRow[i].fourth + "</td><td>" + teamRow[i].fifth + "</td><td>" + teamRow[i].sixth + "</td><td>" + teamRow[i].seventh + "</td><td>" + teamRow[i].eighth + "</td><td>" +
+					teamRow[i].ninth + "</td><td>" + teamRow[i].tenth + "</td></tr>");					
+				}
+				
+				function colourizeTable () {
+					$("tr").children("td").each(function () {
+						if (this.innerText != "") 
+						{
+							if(this.innerText >= 75) {
+								$(this).css("background-color", "#0099cc");
+							}
+							else if((this.innerText >= 50) && (this.innerText < 75)) {
+								$(this).css("background-color", "#6ac4e2");
+							}
+							else if((this.innerText >= 25) && (this.innerText < 50)) {
+								$(this).css("background-color", "#b9e3f1");
+							}
+							else if((this.innerText > 0)) {
+								$(this).css("background-color", "#d4eef7");
+							}
+						}						
+					});				
+				}
+			
+			
+				// Hover-overs
+				var holder;
+				var rowIndex;
+				$("#winrate_table").delegate('td','mouseover mouseleave', function(e) {
+					rowIndex = $(this).parent().index();
+					if (e.type == 'mouseover') {
+						holder = $(this).index();
+						$(this).addClass("hover");
+						$(this).prevAll("td").addClass("hover_light");
+						$(this).parent("tr").prevAll("tr").each(function(){ 
+							$(this).children("td").eq(holder).addClass("hover_light");						
+						});
+						addTieTable(rowIndex);
+					}
+					else {
+						$(this).removeClass("hover");
+						$(this).prevAll("td").removeClass("hover_light");
+						$(this).parent("tr").prevAll("tr").each(function(){ 
+							$(this).children("td").eq(holder).removeClass("hover_light");						
+						});
+					}
+				});
+				
+				function addTieTable(teamNum) {
+					var teamRecord = "";
+					var teamName = "";
+					
+					if($(".tie_history").length > 0) {
+						$(".tie_history").remove();
+					}						
+										
+					switch(teamNum) {
+						case 1: // SK
+							teamName = "SK GAMING";
+							teamRecord = [{place:"1st",solo:65.63,two:25.00,three:3.13,four:""},{place:"2nd",solo:6.25,two:"",three:"",four:""}];
+							break;
+						case 2: // FNC
+							teamName = "FNATIC"
+							teamRecord = [{place:"1st",solo:6.25,two:21.88,three:3.13,four:""},{place:"2nd",solo:34.38,two:21.88,three:"",four:""},{place:"3rd",solo:12.50,two:"" 	,three:"",four:""}];
+							break;
+						default:
+					}
+					
+					$("#team_name").text(teamName);
+					
+					var j;
+					for(j = 0; j < teamRecord.length; j++) {
+						$("#ties_table").append("<tr class='tie_history'><td>" + teamRecord[j].place +"</td><td>" + teamRecord[j].solo +"</td><td>" + teamRecord[j].two +"</td><td>" + teamRecord[j].three +"</td><td>" + teamRecord[j].four +"</td></tr>");
+					}
+					colourizeTable();
+				}
+			});
+		</script>
+	</body>
+</html>
