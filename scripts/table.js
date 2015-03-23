@@ -30,17 +30,20 @@ $(document).ready(function(){
 		$("tr").children("td").each(function () {
 			if (this.innerText != "") 
 			{
-				if(this.innerText >= 75) {
+				if(this.innerText >= 80) {
 					$(this).css("background-color", "#0099cc");
 				}
-				else if((this.innerText >= 50) && (this.innerText < 75)) {
-					$(this).css("background-color", "#6ac4e2");
+				else if((this.innerText >= 60) && (this.innerText < 80)) {
+					$(this).css("background-color", "#33add7");
 				}
-				else if((this.innerText >= 25) && (this.innerText < 50)) {
-					$(this).css("background-color", "#b9e3f1");
+				else if((this.innerText >= 40) && (this.innerText < 60)) {
+					$(this).css("background-color", "#65c1e1");
+				}
+				else if((this.innerText >= 20) && (this.innerText < 40)) {
+					$(this).css("background-color", "#98d5eb");
 				}
 				else if((this.innerText > 0)) {
-					$(this).css("background-color", "#d4eef7");
+					$(this).css("background-color", "#cae9f5");
 				}
 			}						
 		});				
